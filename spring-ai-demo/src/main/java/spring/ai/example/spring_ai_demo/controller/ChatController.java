@@ -14,8 +14,13 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
-    @GetMapping("/prompt")
-    public String prompt(@RequestParam String message) {
-        return chatService.callChatGPT(message);
+    @GetMapping("/text")
+    public String prompt(@RequestParam String prompt) {
+        return chatService.queryAi(prompt);
+    }
+
+    @GetMapping("city-guide")
+    public String cityGuide(@RequestParam("city") String city, @RequestParam("interest") String interest) {
+        return chatService.getCityGuide(city, interest);
     }
 }
