@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import spring.ai.example.spring_ai_demo.Service.ChatService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/chat")
 public class ChatController {
 
     @Autowired
