@@ -1,4 +1,4 @@
-package spring.ai.example.spring_ai_demo.Service;
+package spring.ai.example.spring_ai_demo.service;
 
 
 
@@ -8,6 +8,7 @@ import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -37,4 +38,21 @@ public class ChatService {
 
         return chatClient.call(prompt).getResult().getOutput().getContent();
     }
+
+    public String getDailyEatingRoutine(int height, int weight) {
+        // Define the template with placeholders for height and weight
+        String template = """
+            My height is %d cm, 
+            My weight is %d kg,
+            And give me a daily eating routine to maintain a healthy body and organism,
+            and tell me the daily calories and other main nutrients.
+            """;
+
+        // Format the template with the provided height and weight
+        String prompt = String.format(template, height, weight);
+
+        // Assuming chatClient.call() accepts a String prompt directly and returns a result
+        return chatClient.call(prompt);
+    }
+
 }

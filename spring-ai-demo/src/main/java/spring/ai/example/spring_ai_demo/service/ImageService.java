@@ -1,4 +1,4 @@
-package spring.ai.example.spring_ai_demo.Service;
+package spring.ai.example.spring_ai_demo.service;
 
 import org.springframework.ai.image.*;
 import org.springframework.ai.openai.OpenAiImageOptions;
