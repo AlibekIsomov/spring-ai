@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import spring.ai.example.spring_ai_demo.service.ChatService;
 
 @RestController
-@RequestMapping("/chat")
+@RequestMapping("/api/chat")
 public class ChatController {
 
     @Autowired
@@ -21,7 +21,10 @@ public class ChatController {
         if (prompt == null || prompt.trim().isEmpty()) {
             return ResponseEntity.badRequest().body("Prompt cannot be null or empty");
         }
+        System.out.println("Response Body: " + response);
         return ResponseEntity.ok(response);
+
+
     }
 
     @GetMapping("city-guide")
