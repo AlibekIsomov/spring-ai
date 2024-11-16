@@ -15,7 +15,7 @@ import spring.ai.example.spring_ai_demo.service.ImageService;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/image")
+@RequestMapping("/api/image")
 public class ImageController {
     @Autowired
     private ImageService imageService;
